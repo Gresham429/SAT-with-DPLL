@@ -1,6 +1,7 @@
 CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj: \
  D:\code\HanidokuSolver\src\cnf_parser.cpp \
  D:/code/HanidokuSolver/include/cnf_parser.h \
+ D:/code/HanidokuSolver/include/list.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \

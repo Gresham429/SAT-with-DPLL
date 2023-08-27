@@ -176,30 +176,6 @@ src/display.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HanidokuSolver.dir\build.make CMakeFiles/HanidokuSolver.dir/src/display.cpp.s
 .PHONY : src/display.cpp.s
 
-src/dpll_solver.obj: src/dpll_solver.cpp.obj
-.PHONY : src/dpll_solver.obj
-
-# target to build an object file
-src/dpll_solver.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HanidokuSolver.dir\build.make CMakeFiles/HanidokuSolver.dir/src/dpll_solver.cpp.obj
-.PHONY : src/dpll_solver.cpp.obj
-
-src/dpll_solver.i: src/dpll_solver.cpp.i
-.PHONY : src/dpll_solver.i
-
-# target to preprocess a source file
-src/dpll_solver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HanidokuSolver.dir\build.make CMakeFiles/HanidokuSolver.dir/src/dpll_solver.cpp.i
-.PHONY : src/dpll_solver.cpp.i
-
-src/dpll_solver.s: src/dpll_solver.cpp.s
-.PHONY : src/dpll_solver.s
-
-# target to generate assembly for a file
-src/dpll_solver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HanidokuSolver.dir\build.make CMakeFiles/HanidokuSolver.dir/src/dpll_solver.cpp.s
-.PHONY : src/dpll_solver.cpp.s
-
 src/hanidoku_solver.obj: src/hanidoku_solver.cpp.obj
 .PHONY : src/hanidoku_solver.obj
 
@@ -287,9 +263,6 @@ help:
 	@echo ... src/display.obj
 	@echo ... src/display.i
 	@echo ... src/display.s
-	@echo ... src/dpll_solver.obj
-	@echo ... src/dpll_solver.i
-	@echo ... src/dpll_solver.s
 	@echo ... src/hanidoku_solver.obj
 	@echo ... src/hanidoku_solver.i
 	@echo ... src/hanidoku_solver.s

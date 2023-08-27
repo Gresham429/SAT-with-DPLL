@@ -5,20 +5,19 @@
 
 int BoolCount, ClauseCount;
 
-//读取cnf文件
-bool cnf_parser::ReadCNFFile(const std::string filename, std::vector<clause> &clauses)
+// 读取cnf文件
+bool cnf_parser::ReadCNFFile(const std::string filename, DeLinkList<clause> &clauses)
 {
-    std::cout << filename << std::endl;
     std::ifstream inFile(filename);
 
     if (!inFile)
     {
-        //处理打开失败的文件
+        // 处理打开失败的文件
         std::cerr << "文件打开失败,请重新读取" << std::endl;
         return false;
     }
 
-    //读取cnf文件成功
+    // 读取cnf文件成功
     std::cout << "成功读取cnf文件" << std::endl;
 
     std::string line;
@@ -32,7 +31,7 @@ bool cnf_parser::ReadCNFFile(const std::string filename, std::vector<clause> &cl
 
         if (line[0] == 'p')
         {
-            //匿名变量忽略cnf字符串
+            // 匿名变量忽略cnf字符串
             std::string _;
             iss >> _ >> _ >> BoolCount >> ClauseCount;
             continue;
@@ -54,30 +53,20 @@ bool cnf_parser::ReadCNFFile(const std::string filename, std::vector<clause> &cl
     return true;
 }
 
-//判断是否为单子句（只有一个文字）
+// 判断是否为单子句（只有一个文字）
 bool cnf_parser::IsUnitClause(clause clause)
 {
-    if (clause.literals.size() == 1) return true;
-    
-    return false;
+    return (clause.literals.size() == 1);
 }
 
-//判断子句的真假
-bool cnf_parser::EvaluateClause(clause clause, std::vector<LiteralStatus> assignment)
+// 判断子句中是否含有某个文字
+bool cnf_parser::HaveLiteral(clause clause, int literal)
 {
-    for (auto literal : clause.literals)
+    for (auto it_literal = clause.literals.begin(); it_literal != clause.literals.end(); ++it_literal)
     {
-        if (literal > 0 && assignment[literal - 1] == LiteralStatus::True)
-        {
-            clause.satisfied_flag = true;
-            break;
-        }
-        else if (literal < 0 && assignment[-literal - 1] == LiteralStatus::False)
-        {
-            clause.satisfied_flag = true;
-            break;
-        }
+        if (*it_literal == literal)
+            return true;
     }
 
-    return clause.satisfied_flag;
+    return false;
 }

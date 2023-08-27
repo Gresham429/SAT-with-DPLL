@@ -1,13 +1,13 @@
 #include "../include/dpll_solver.h"
 #include "../include/cnf_parser.h"
 #include "../include/utils.h"
+#include "../include/list.h"
 #include <iostream>
-#include <vector>
 #include <functional>
 
 using namespace std;
 
-std::vector<cnf_parser::clause> clauses;
+DeLinkList<cnf_parser::clause> clauses;
 DPLLSolver dpll_solver(8, 8);
 
 void display(int op)

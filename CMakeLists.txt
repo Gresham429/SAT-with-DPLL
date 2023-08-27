@@ -22,7 +22,6 @@ set(SOURCES
     src/display.cpp
     src/hanidoku_solver.cpp
     src/cnf_parser.cpp
-    src/dpll_solver.cpp
     src/utils.cpp
 )
 
@@ -33,6 +32,7 @@ set(HEADERS
     include/cnf_parser.h
     include/dpll_solver.h
     include/utils.h
+    include/list.h
 )
 
 # 添加可执行文件

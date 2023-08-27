@@ -1,6 +1,7 @@
 #ifndef CNF_PARSER_H
 #define CNF_PARSER_H
 
+#include "list.h"
 #include <iostream>
 #include <utility>
 #include <map>
@@ -16,23 +17,21 @@ enum class LiteralStatus
 class cnf_parser
 {
 public:
-    //定义子句
+    // 定义子句
     struct clause
     {
-        //子句中的文字数组
-        std::vector<int> literals;
-        //子句真假
-        bool satisfied_flag = false;
+        // 子句中的文字数组
+        DeLinkList<int> literals;
     };
     
-    //读取cnf文件
-    bool ReadCNFFile(const std::string filename, std::vector<clause> &clauses);
+    // 读取cnf文件
+    bool ReadCNFFile(const std::string filename, DeLinkList<clause> &clauses);
 
-    //判断是否为单子句（只有一个文字）
+    // 判断是否为单子句（只有一个文字）
     bool IsUnitClause(clause clause);
 
-    //判断子句的真假
-    bool EvaluateClause(clause clause, std::vector<LiteralStatus> assignment);
+    // 判断子句中是否含有某个文字
+    bool HaveLiteral(clause clause, int literal);
 };
 
 #endif

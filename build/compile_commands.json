@@ -25,12 +25,6 @@
 },
 {
   "directory": "D:/code/HanidokuSolver/build",
-  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp  -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\HanidokuSolver.dir\\src\\dpll_solver.cpp.obj -c D:\\code\\HanidokuSolver\\src\\dpll_solver.cpp",
-  "file": "D:/code/HanidokuSolver/src/dpll_solver.cpp",
-  "output": "CMakeFiles/HanidokuSolver.dir/src/dpll_solver.cpp.obj"
-},
-{
-  "directory": "D:/code/HanidokuSolver/build",
   "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp  -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\HanidokuSolver.dir\\src\\utils.cpp.obj -c D:\\code\\HanidokuSolver\\src\\utils.cpp",
   "file": "D:/code/HanidokuSolver/src/utils.cpp",
   "output": "CMakeFiles/HanidokuSolver.dir/src/utils.cpp.obj"

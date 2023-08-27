@@ -10,4 +10,6 @@ int main()
         std::cin >> op;
         display(op);
     } while (op);
+
+    return 0;
 }

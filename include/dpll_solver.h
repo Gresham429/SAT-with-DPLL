@@ -3,10 +3,11 @@
 
 #include "cnf_parser.h"
 #include "utils.h"
+#include "list.h"
 #include <iostream>
 #include <vector>
 #include <mutex>
-#include <unordered_map>
+#include <algorithm>
 
 class DPLLSolver
 {
@@ -16,349 +17,228 @@ public:
     {
     }
 
-    bool BasicSolve(std::vector<cnf_parser::clause> clauses, int BoolCount)
+    bool BasicSolve(DeLinkList<cnf_parser::clause> clauses, int BoolCount)
     {
-        this->clauses = clauses;
-        this->assignment = std::vector<LiteralStatus>(BoolCount + 1, LiteralStatus::Unassigned);
-        return BasicSolveRecursively(clauses, assignment);
+        LiteralStatus assignment[BoolCount + 1] = {LiteralStatus::Unassigned};
+        return BasicSolveRecursively(clauses, assignment, BoolCount);
     }
 
-    bool OptimizedSolve(std::vector<cnf_parser::clause> clauses, int BoolCount)
+    bool OptimizedSolve(DeLinkList<cnf_parser::clause> clauses, int BoolCount)
     {
-        this->clauses = clauses;
-        this->assignment = std::vector<LiteralStatus>(BoolCount + 1, LiteralStatus::Unassigned);
-        return OptimizedSolveRecursively(clauses, assignment);
+        LiteralStatus assignment[BoolCount + 1] = {LiteralStatus::Unassigned};
+        return OptimizedSolveRecursively(clauses, assignment, BoolCount);
     }
 
 private:
-    std::vector<cnf_parser::clause> clauses;
-    std::vector<LiteralStatus> assignment;
     int min_threads, max_threads;
     ThreadPool threadPool;
+    typedef std::pair<int, int> PII;
 
     // 分裂策略选择器
     // 选择出现次数最多的未赋值的文字作为分裂的变元
-    int SelectLiteral(const std::vector<cnf_parser::clause> clauses, const std::vector<LiteralStatus> &assignment)
+    int SelectLiteral(const PII counter[], const int BoolCount)
     {
-        extern int BoolCount;
+        int max_occurence = 0;
+        int select_literal = 0;
 
-        std::vector<int> literalOccurrences(BoolCount + 1, 0); // 初始化变元出现次数数组
-
-        for (const auto &clause : clauses)
+        for (size_t i = 1; i <= BoolCount; ++i)
         {
-            for (int literal : clause.literals)
+            int occurence = counter[i].first + counter[i].second;
+            if (occurence > max_occurence)
             {
-                int absLiteral = std::abs(literal);
-                if (assignment[absLiteral] == LiteralStatus::Unassigned)
-                {
-                    literalOccurrences[absLiteral]++;
-                }
+                max_occurence = occurence;
+                select_literal = i;
             }
         }
 
-        int selectedLiteral = -1;
-        int maxOccurrences = 0;
-
-        for (int i = 1; i <= BoolCount; ++i)
-        {
-            if (assignment[i] == LiteralStatus::Unassigned && literalOccurrences[i] > maxOccurrences)
-            {
-                selectedLiteral = i;
-                maxOccurrences = literalOccurrences[i];
-            }
-        }
-
-        return selectedLiteral;
+        return select_literal;
     }
 
-    // 化简子句集合
-    void SimplifyClauses(std::vector<cnf_parser::clause> &clauses, const cnf_parser &parser, int unit_literal)
+    // 单子句传播
+    void UnitClausePropagation(DeLinkList<cnf_parser::clause> &clauses, LiteralStatus *assigenment, PII *counter)
     {
-        for (auto clause_it = clauses.begin(); clause_it != clauses.end();)
+        cnf_parser parser;
+
+        while (true)
         {
-            bool RemoveClause = false;
+            bool HaveUnitClause = false;
+            int UnitLiteral;
 
-            for (auto literal_it = clause_it->literals.begin(); literal_it != clause_it->literals.end(); ++literal_it)
+            for (auto it_clause = clauses.begin(); it_clause != clauses.end(); ++it_clause)
             {
-                if (*literal_it == unit_literal)
+                if (parser.IsUnitClause(*it_clause))
                 {
-                    RemoveClause = true;
-                    break;
-                }
-                else if (*literal_it == -unit_literal)
-                {
-                    clause_it->literals.erase(literal_it);
+                    HaveUnitClause = true;
+                    UnitLiteral = (*it_clause).literals.front();
+                    assigenment[std::abs(UnitLiteral)] = (UnitLiteral > 0 ? LiteralStatus::True : LiteralStatus::False);    
                     break;
                 }
             }
 
-            if (RemoveClause)
+            if (!HaveUnitClause)
+                return;
+
+            for (auto it_clause = clauses.begin(); it_clause != clauses.end();)
             {
-                clause_it = clauses.erase(clause_it);
+                bool remove_flag = false;
+
+                if (parser.HaveLiteral(*it_clause, UnitLiteral))
+                {
+                    for (auto it_literal = (*it_clause).literals.begin(); it_literal != (*it_clause).literals.end(); ++it_literal)
+                    {
+                        *it_literal > 0 ? counter[std::abs(*it_literal)].first-- : counter[std::abs(*it_literal)].second--;
+                    }
+                    remove_flag = true;
+                    it_clause = clauses.remove_node(it_clause);
+                }
+                else if (parser.HaveLiteral(*it_clause, -UnitLiteral))
+                {
+                    (*it_clause).literals.remove_node(-UnitLiteral);
+                }
+
+                if (!remove_flag) ++it_clause;
             }
-            else
-            {
-                ++clause_it;
-            }
+
+            counter[std::abs(UnitLiteral)] = {0, 0};
         }
     }
 
     // 纯文字传播
-    void PureLiteralPropagation(std::vector<cnf_parser::clause> &clauses, std::unordered_map<int, int> counter)
+    void PureLiteralPropagation(DeLinkList<cnf_parser::clause> &clauses, PII counter[],const int BoolCount)
     {
-        extern int BoolCount;
-
-        for (int i = 1; i <= BoolCount; ++i)
+        for (size_t i = 1; i <= BoolCount; ++i)
         {
-            if (counter.find(i) != counter.end() && counter.find(-i) == counter.end())
+            if (counter[i].first != 0 && counter[i].second == 0)
             {
-                cnf_parser::clause tmp;
-                tmp.literals = {i};
-                tmp.satisfied_flag = true;
-                clauses.push_back(tmp);
+                cnf_parser::clause temp;
+                temp.literals.push_back(i);
+                clauses.push_front(temp);
+                counter[i].first++;
             }
-            else if (counter.find(i) == counter.end() && counter.find(-i) != counter.end())
+            else if (counter[i].first == 0 && counter[i].second != 0)
             {
-                cnf_parser::clause tmp;
-                tmp.literals = {-i};
-                tmp.satisfied_flag = true;
-                clauses.push_back(tmp);
-            }
-        }
-    }
-
-    void HashCount(const std::vector<cnf_parser::clause> clauses, std::unordered_map<int, int> &counters)
-    {
-        for (const auto &clause : clauses)
-        {
-            for (int literal : clause.literals)
-            {
-                if (counters.find(literal) != counters.end())
-                {
-                    ++counters[literal];
-                }
-                else
-                {
-                    counters.emplace(literal, 1);
-                }
+                cnf_parser::clause temp;
+                temp.literals.push_back(-i);
+                clauses.push_front(temp);
+                counter[i].second++;
             }
         }
     }
 
     // 基础DPLL求解器
-    bool BasicSolveRecursively(std::vector<cnf_parser::clause> clauses, std::vector<LiteralStatus> assignment)
+    bool BasicSolveRecursively(DeLinkList<cnf_parser::clause> clauses, LiteralStatus assignemnt[],const int BoolCount)
     {
-        cnf_parser parser;
+        // 统计出现次数
+        PII counter[BoolCount + 1] = {{0, 0}};
 
-        // 用HashMap作为计数器
-        std::unordered_map<int, int> counters;
-
-        HashCount(clauses, counters);
+        for (auto it_clause = clauses.begin(); it_clause != clauses.end(); ++it_clause)
+        {
+            for (auto it_literal = (*it_clause).literals.begin(); it_literal != (*it_clause).literals.end(); ++it_literal)
+            {
+                // 文字为真则第一个自增，否则第二个自增
+                *it_literal > 0 ? counter[std::abs(*it_literal)].first++ : counter[std::abs(*it_literal)].second++;
+            }
+        }
 
         // 纯文字传播
-        PureLiteralPropagation(clauses, counters);
+        PureLiteralPropagation(clauses, counter, BoolCount);
 
-        // 单子句传播，化简子句集合
-        while (true)
+        // 单子句传播
+        UnitClausePropagation(clauses, assignemnt, counter);
+
+        // 所有子句被满足，返回true
+        if (clauses.empty()) return true;
+        
+        // 含有空子句，返回false
+        for (auto it_clause = clauses.begin(); it_clause != clauses.end(); ++it_clause)
         {
-            bool unit_clause_found = false;
-            int unit_literal = 0;
-
-            // 查找单子句
-            for (const auto &clause : clauses)
-            {
-                if (parser.IsUnitClause(clause))
-                {
-                    unit_clause_found = true;
-                    unit_literal = clause.literals[0];
-                    break;
-                }
-            }
-
-            // 没有单子句了，退出循环
-            if (!unit_clause_found)
-            {
-                break;
-            }
-
-            // 更新 literal 赋值
-            assignment[std::abs(unit_literal)] = (unit_literal > 0) ? LiteralStatus::True : LiteralStatus::False;
-
-            // 化简子句集
-            SimplifyClauses(clauses, parser, unit_literal);
+            if ((*it_clause).literals.empty()) return false;
         }
 
-        // 所有子句都满足，返回 true
-        if (clauses.empty())
-        {
-            return true;
-        }
+        // 分裂策略
+        int select_literal = SelectLiteral(counter, BoolCount);
 
-        // clauses 中有空子句，返回 false
-        for (const auto &clause : clauses)
-        {
-            if (clause.literals.empty())
-            {
-                return false;
-            }
-        }
-
-        // 选择一个变元 v
-        int select_literal = SelectLiteral(clauses, assignment);
-
-        // 在第一分支中搜索
-        std::vector<cnf_parser::clause> clauses_left = clauses;
-
-        // 构建单子句
+        // 构建左子句集合
         cnf_parser::clause clause_left;
-        clause_left.literals = {select_literal};
-        clause_left.satisfied_flag = true;
+        clause_left.literals.push_back(select_literal);
+        clauses.push_front(clause_left);
+        LiteralStatus assignemnt_left[BoolCount + 1];
+        for (size_t i = 0; i <= BoolCount; ++i)
+        {
+            assignemnt_left[i] = assignemnt[i];
+        }
+        if (BasicSolveRecursively(clauses, assignemnt_left, BoolCount)) return true;
+    
+        clauses.pop_front();
 
-        clauses_left.push_back(clause_left);
-
-        if (BasicSolveRecursively(clauses_left, assignment)) return true;
-
-        // 回溯到对 v 执行分支策略的初态进入另一分支
-        std::vector<cnf_parser::clause> clauses_right = clauses;
-
-        // 构建单子句
+        // 构建右子句集合
         cnf_parser::clause clause_right;
-        clause_right.literals = {-select_literal};
-        clause_right.satisfied_flag = true;
-
-        clauses_right.push_back(clause_right); // 添加单子句
-
-        return BasicSolveRecursively(clauses_right, assignment);
+        clause_right.literals.push_back(-select_literal);
+        clauses.push_front(clause_right);
+        LiteralStatus assignemnt_right[BoolCount + 1];
+        for (size_t i = 0; i <= BoolCount; ++i)
+        {
+            assignemnt_right[i] = assignemnt[i];
+        }
+        return BasicSolveRecursively(clauses, assignemnt_right, BoolCount);
     }
 
     // 多线程优化后的DPLL求解器
-    bool OptimizedSolveRecursively(std::vector<cnf_parser::clause> clauses, std::vector<LiteralStatus> assignment)
+    bool OptimizedSolveRecursively(DeLinkList<cnf_parser::clause> clauses, LiteralStatus assignemnt[], int BoolCount)
     {
-        cnf_parser parser;
+                // 统计出现次数
+        PII counter[BoolCount + 1] = {{0, 0}};
 
-        // 用HashMap作为计数器
-        std::unordered_map<int, int> counter;
-
-        for (const auto &clause : clauses)
+        for (auto it_clause = clauses.begin(); it_clause != clauses.end(); ++it_clause)
         {
-            for (int literal : clause.literals)
+            for (auto it_literal = (*it_clause).literals.begin(); it_literal != (*it_clause).literals.end(); ++it_literal)
             {
-                if (counter.find(literal) != counter.end())
-                {
-                    ++counter[literal];
-                }
-                else
-                {
-                    counter.emplace(literal, 1);
-                }
+                // 文字为真则第一个自增，否则第二个自增
+                *it_literal > 0 ? counter[std::abs(*it_literal)].first++ : counter[std::abs(*it_literal)].second++;
             }
         }
 
         // 纯文字传播
-        PureLiteralPropagation(clauses, counter);
+        PureLiteralPropagation(clauses, counter, BoolCount);
 
-        // 单子句传播，化简子句集合
-        while (true)
+        // 单子句传播
+        UnitClausePropagation(clauses, assignemnt, counter);
+
+        // 所有子句被满足，返回true
+        if (clauses.empty()) return true;
+        
+        // 含有空子句，返回false
+        for (auto it_clause = clauses.begin(); it_clause != clauses.end(); ++it_clause)
         {
-            bool unit_clause_found = false;
-            int unit_literal = 0;
-
-            // 查找单子句
-            for (const auto &clause : clauses)
-            {
-                if (parser.IsUnitClause(clause))
-                {
-                    unit_clause_found = true;
-                    unit_literal = clause.literals[0];
-                    break;
-                }
-            }
-
-            // 没有单子句了，退出循环
-            if (!unit_clause_found)
-            {
-                break;
-            }
-
-            // 更新 literal 赋值
-            assignment[std::abs(unit_literal)] = (unit_literal > 0) ? LiteralStatus::True : LiteralStatus::False;
-
-            // 化简子句集
-            SimplifyClauses(clauses, parser, unit_literal);
+            if ((*it_clause).literals.empty()) return false;
         }
 
-        // 所有子句都满足，返回 true
-        if (clauses.empty())
-        {
-            return true;
-        }
+        // 分裂策略
+        int select_literal = SelectLiteral(counter, BoolCount);
 
-        // clauses 中有空子句，返回 false
-        for (const auto &clause : clauses)
-        {
-            if (clause.literals.empty())
-            {
-                return false;
-            }
-        }
-
-        // 选择一个变元 v
-        int select_literal = SelectLiteral(clauses, assignment);
-
-        // 在第一分支中搜索
-        std::vector<cnf_parser::clause> clauses_left = clauses;
-
-        // 构建单子句
+        // 构建左子句集合
         cnf_parser::clause clause_left;
-        clause_left.literals = {select_literal};
-        clause_left.satisfied_flag = true;
-
-        clauses_left.push_back(clause_left);
-
-        // 回溯到对 v 执行分支策略的初态进入另一分支
-        std::vector<cnf_parser::clause> clauses_right = clauses;
-
-        // 构建单子句
-        cnf_parser::clause clause_right;
-        clause_right.literals = {-select_literal};
-        clause_right.satisfied_flag = true;
-
-        clauses_right.push_back(clause_right); // 添加单子句
-
-        // 尝试开辟新线程搜索
-        std::vector<std::future<bool>> resultFutures; // 构建结果数组
-        std::vector<LiteralStatus> assignment_tmp1 = assignment;
-        std::vector<LiteralStatus> assignment_tmp2 = assignment;
-
-        resultFutures.push_back(threadPool.EnqueueTask([this, clauses_left, assignment_tmp1]() {
-            return  BasicSolveRecursively(clauses_left, assignment_tmp1);
-        }));
-        resultFutures.push_back(threadPool.EnqueueTask([this, clauses_right, assignment_tmp2]() {
-            return  BasicSolveRecursively(clauses_right, assignment_tmp2);
-        }));
-
-        // resultFutures.push_back(std::async(std::launch::async | std::launch::deferred, [this, clauses_left, assignment_tmp2]() {
-        //     return  BasicSolveRecursively(clauses_left, assignment_tmp2);
-        // }));
-
-        // resultFutures.push_back(std::async(std::launch::async | std::launch::deferred, [this, clauses_right, assignment_tmp2]() {
-        //     return  BasicSolveRecursively(clauses_right, assignment_tmp2);
-        // }));
-
-        // 并行的去获取结果
-        std::vector<std::shared_future<bool>> sharedFutures;
-        for (auto &result : resultFutures)
-            sharedFutures.push_back(result.share());
-
-        for (auto &shared_result : sharedFutures)
+        clause_left.literals.push_back(select_literal);
+        DeLinkList<cnf_parser::clause> clauses_left = clauses;
+        clauses_left.push_front(clause_left);
+        LiteralStatus assignemnt_left[BoolCount + 1];
+        for (size_t i = 0; i <= BoolCount; ++i)
         {
-            if (shared_result.get())
-            {
-                return true;
-            }
+            assignemnt_left[i] = assignemnt[i];
         }
-
-        return false;
+        if (BasicSolveRecursively(clauses_left, assignemnt_left, BoolCount)) return true;
+    
+        // 构建右子句集合
+        cnf_parser::clause clause_right;
+        clause_right.literals.push_back(-select_literal);
+        DeLinkList<cnf_parser::clause> clauses_right = clauses;
+        clauses_right.push_front(clause_right);
+        LiteralStatus assignemnt_right[BoolCount + 1];
+        for (size_t i = 0; i <= BoolCount; ++i)
+        {
+            assignemnt_right[i] = assignemnt[i];
+        }
+        return BasicSolveRecursively(clauses_right, assignemnt_right, BoolCount);
     }
 };
 

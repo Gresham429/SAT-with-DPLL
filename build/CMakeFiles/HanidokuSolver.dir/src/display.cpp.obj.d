@@ -2,6 +2,7 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: \
  D:\code\HanidokuSolver\src\display.cpp \
  D:/code/HanidokuSolver/include/dpll_solver.h \
  D:/code/HanidokuSolver/include/cnf_parser.h \
+ D:/code/HanidokuSolver/include/list.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -182,9 +183,10 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/future \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/atomic \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/atomic_futex.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/unordered_map \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/hashtable.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/hashtable_policy.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/unordered_map.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/algorithm \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_algo.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/algorithmfwd.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h \
  D:/code/HanidokuSolver/include/cnf_parser.h \
- D:/code/HanidokuSolver/include/utils.h
+ D:/code/HanidokuSolver/include/utils.h \
+ D:/code/HanidokuSolver/include/list.h

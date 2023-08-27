@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj.d"
   "CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj"
   "CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj.d"
-  "CMakeFiles/HanidokuSolver.dir/src/dpll_solver.cpp.obj"
-  "CMakeFiles/HanidokuSolver.dir/src/dpll_solver.cpp.obj.d"
   "CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj"
   "CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj.d"
   "CMakeFiles/HanidokuSolver.dir/src/main.cpp.obj"
