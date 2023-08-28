@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp
 
-CXX_FLAGS =  -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++11
+CXX_FLAGS =  -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++14
 

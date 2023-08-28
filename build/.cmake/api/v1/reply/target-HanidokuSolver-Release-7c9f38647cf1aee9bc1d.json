@@ -64,7 +64,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++11"
+					"fragment" : " -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++14"
 				}
 			],
 			"includes" : 
@@ -81,7 +81,7 @@
 				[
 					1
 				],
-				"standard" : "11"
+				"standard" : "14"
 			},
 			"sourceIndexes" : 
 			[
