@@ -9,6 +9,20 @@ using namespace std;
 
 DeLinkList<cnf_parser::clause> clauses;
 DPLLSolver dpll_solver(8, 8);
+pair <bool, long long> result_pair;
+long long runtime;
+bool result;
+std::vector<LiteralStatus> assignment;
+
+void printMenu()
+{
+    cout << "1、读取cnf文件" << endl;
+    cout << "2、基础SAT求解" << endl;
+    cout << "3、优化SAT求解" << endl;
+    cout << "4、输出res文件" << endl;
+    cout << "0、结束" << endl;
+    cout << "请输入你的选择: ";
+}
 
 void display(int op)
 {
@@ -16,7 +30,7 @@ void display(int op)
     int count;
     string filename;
     cnf_parser parser;
-    
+
     switch (op)
     {
     case 1:
@@ -38,8 +52,12 @@ void display(int op)
             break;
         }
 
-        if (MeasureTime(std::bind(&DPLLSolver::BasicSolve, &dpll_solver, std::placeholders::_1, std::placeholders::_2), clauses, BoolCount)) cout << "有解" << endl;
-        else cout << "无解" << endl;
+        result_pair = MeasureTime(std::bind(&DPLLSolver::BasicSolve, &dpll_solver, std::placeholders::_1, std::placeholders::_2), clauses, BoolCount);
+        result = result_pair.first;
+        runtime = result_pair.second;
+
+        if (result) cout << "有解" << endl;
+        else  cout << "无解" << endl;
 
         clauses.clear();
 
@@ -52,11 +70,19 @@ void display(int op)
             break;
         }
 
-        if (MeasureTime(std::bind(&DPLLSolver::OptimizedSolve, &dpll_solver, std::placeholders::_1, std::placeholders::_2), clauses, BoolCount)) cout << "有解" << endl;
-        else cout << "无解" << endl;
+        result_pair = MeasureTime(std::bind(&DPLLSolver::OptimizedSolve, &dpll_solver, std::placeholders::_1, std::placeholders::_2), clauses, BoolCount);
+        result = result_pair.first;
+        runtime = result_pair.second;
 
         clauses.clear();
 
+        break;
+
+    case 4:
+        cout << "请输入输出文件路径" << endl;
+        cin >> filename; 
+        assignment = dpll_solver.GetResult();
+        parser.WriteRes(assignment, filename, result, runtime);
         break;
 
     default:

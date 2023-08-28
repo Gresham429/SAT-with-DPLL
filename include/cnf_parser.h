@@ -32,6 +32,8 @@ public:
 
     // 判断子句中是否含有某个文字
     bool HaveLiteral(clause clause, int literal);
+
+    void WriteRes(std::vector<LiteralStatus> assignemnt, std::string filename, bool flag, long long runtime);
 };
 
 #endif

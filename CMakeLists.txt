@@ -9,7 +9,7 @@ set(CMAKE_C_COMPILER "D:/mingw64/bin/gcc.exe")
 set(CMAKE_CXX_COMPILER "D:/mingw64/bin/g++.exe")
 
 # 设置 C++ 标准
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # 设置异常处理相关的链接选项

@@ -193,7 +193,7 @@ private:
 
 // 时间测试函数
 template <typename Func, typename... Args>
-auto MeasureTime(Func func, Args... args) -> decltype(func(args...))
+auto MeasureTime(Func func, Args... args)
 {
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -203,9 +203,9 @@ auto MeasureTime(Func func, Args... args) -> decltype(func(args...))
     auto end_time = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
 
-    std::cout << "运行时间为： " << duration.count() << "ms" << std::endl;
+    std::cout << "运行时间为：" << duration.count() << "ms" << std::endl;
 
-    return result;
+    return std::make_pair(result, duration.count());
 }
 
 #endif

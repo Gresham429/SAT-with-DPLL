@@ -7,8 +7,11 @@ int main()
 
     do
     {
+        printMenu();
         std::cin >> op;
         display(op);
+
+        std::cout << std::endl;
     } while (op);
 
     return 0;

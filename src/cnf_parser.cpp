@@ -70,3 +70,49 @@ bool cnf_parser::HaveLiteral(clause clause, int literal)
 
     return false;
 }
+
+void cnf_parser::WriteRes(std::vector<LiteralStatus> assignemnt, std::string filename, bool flag, long long runtime)
+{
+    extern int BoolCount;
+    std::ofstream outFile(filename);
+
+    if (!outFile)
+    {
+        // 处理打开失败的文件
+        std::cerr << "文件打开失败,请重新读取" << std::endl;
+        return;
+    }
+
+    outFile.clear();
+
+    if (!flag)
+    {
+        outFile << "s 0" << std::endl;
+        outFile << "v" << std::endl;
+        outFile << "t " << runtime << std::endl;
+
+        outFile.close();
+        return;
+    }
+
+    outFile << "s 1" << std::endl;
+    outFile << "v";
+
+    for (int i = 1; i <= BoolCount; ++i)
+    {
+        if (assignemnt[i] == LiteralStatus::True)
+        {
+            outFile << " " << i + 1;
+        }
+        else if (assignemnt[i] == LiteralStatus::False)
+        {
+            outFile << " " << -(i + 1);
+        }
+    }
+
+    outFile << std::endl;
+
+    outFile << "t " << runtime << std::endl;
+
+    outFile.close();
+}
