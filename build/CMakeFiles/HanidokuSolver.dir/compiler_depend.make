@@ -158,6 +158,7 @@ CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj: D:/code/HanidokuSolver/src
 CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/display.cpp \
   D:/code/HanidokuSolver/include/cnf_parser.h \
   D:/code/HanidokuSolver/include/dpll_solver.h \
+  D:/code/HanidokuSolver/include/hanidoku_solver.h \
   D:/code/HanidokuSolver/include/list.h \
   D:/code/HanidokuSolver/include/utils.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed/limits.h \
@@ -179,6 +180,7 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/di
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/basic_string.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/basic_string.tcc \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/char_traits.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/codecvt.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/concept_check.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/cpp_type_traits.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/cxxabi_forced.h \
@@ -187,6 +189,7 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/di
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/exception.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/exception_defines.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/exception_ptr.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/fstream.tcc \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/functexcept.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/functional_hash.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/hash_bytes.h \
@@ -207,6 +210,8 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/di
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/postypes.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/predefined_ops.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/ptr_traits.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/random.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/random.tcc \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/range_access.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/refwrap.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/shared_ptr.h \
@@ -227,6 +232,7 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/di
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_iterator_base_types.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_map.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_multimap.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_numeric.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_pair.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_queue.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_raw_storage_iter.h \
@@ -246,10 +252,12 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/di
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cerrno \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/chrono \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/clocale \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cmath \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/condition_variable \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdint \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdio \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdlib \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstring \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ctime \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cwchar \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cwctype \
@@ -265,6 +273,7 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/di
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/numeric_traits.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/string_conversions.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/type_traits.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/fstream \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/functional \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/future \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/initializer_list \
@@ -277,8 +286,10 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/di
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/memory \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/mutex \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/new \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/numeric \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ostream \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/queue \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/random \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ratio \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/stdexcept \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/stdlib.h \
@@ -292,8 +303,10 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/di
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/utility \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/vector \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
@@ -301,9 +314,15 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/di
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/gthr.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/opt_random.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/emmintrin.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/mm_malloc.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/mmintrin.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/pmmintrin.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stddef.h \
   D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stdint.h \
+  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/xmmintrin.h \
   D:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
   D:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
   D:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
@@ -319,6 +338,7 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/di
   D:/mingw64/x86_64-w64-mingw32/include/limits.h \
   D:/mingw64/x86_64-w64-mingw32/include/locale.h \
   D:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+  D:/mingw64/x86_64-w64-mingw32/include/math.h \
   D:/mingw64/x86_64-w64-mingw32/include/process.h \
   D:/mingw64/x86_64-w64-mingw32/include/pthread.h \
   D:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
@@ -329,6 +349,7 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/di
   D:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_directx.h \
   D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
   D:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+  D:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
   D:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
   D:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
   D:/mingw64/x86_64-w64-mingw32/include/signal.h \
@@ -336,6 +357,7 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: D:/code/HanidokuSolver/src/di
   D:/mingw64/x86_64-w64-mingw32/include/stdint.h \
   D:/mingw64/x86_64-w64-mingw32/include/stdio.h \
   D:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+  D:/mingw64/x86_64-w64-mingw32/include/string.h \
   D:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
   D:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
   D:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
@@ -696,6 +718,8 @@ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/ostream_insert.h:
 
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_facets.tcc:
 
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstring:
+
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/allocator.h:
 
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/alloc_traits.h:
@@ -866,6 +890,8 @@ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/
 
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/type_traits.h:
 
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/pmmintrin.h:
+
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h:
 
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/fstream:
@@ -984,6 +1010,8 @@ D:/code/HanidokuSolver/src/utils.cpp:
 
 D:/mingw64/x86_64-w64-mingw32/include/stddef.h:
 
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cmath:
+
 D:/mingw64/x86_64-w64-mingw32/include/stdio.h:
 
 D:/mingw64/x86_64-w64-mingw32/include/stdlib.h:
@@ -1004,6 +1032,8 @@ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/condition_variable:
 
 D:/code/HanidokuSolver/include/dpll_solver.h:
 
+D:/code/HanidokuSolver/include/hanidoku_solver.h:
+
 D:/code/HanidokuSolver/include/utils.h:
 
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/atomic:
@@ -1013,6 +1043,10 @@ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/atomic_base.h:
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/deque.tcc:
 
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/parse_numbers.h:
+
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/random.h:
+
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/random.tcc:
 
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/refwrap.h:
 
@@ -1025,6 +1059,8 @@ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/std_mutex.h:
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_deque.h:
 
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_heap.h:
+
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_numeric.h:
 
 D:/code/HanidokuSolver/src/hanidoku_solver.cpp:
 
@@ -1042,14 +1078,34 @@ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/functional:
 
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/mutex:
 
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/numeric:
+
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/queue:
+
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/random:
 
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ratio:
 
 D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/thread:
 
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/opt_random.h:
+
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/emmintrin.h:
+
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/mm_malloc.h:
+
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/mmintrin.h:
+
+D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/xmmintrin.h:
+
 D:/mingw64/x86_64-w64-mingw32/include/_timeval.h:
 
+D:/mingw64/x86_64-w64-mingw32/include/math.h:
+
 D:/mingw64/x86_64-w64-mingw32/include/pthread_time.h:
+
+D:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h:
+
+D:/mingw64/x86_64-w64-mingw32/include/string.h:
 
 D:/mingw64/x86_64-w64-mingw32/include/time.h:
