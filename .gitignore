@@ -1,0 +1,14 @@
+# 编译输出目录
+build/
+
+# IDE生成的文件和目录
+.vscode/
+.idea/
+*.suo
+*.user
+*.sln
+*.sdf
+
+# 编译器或IDE生成的可执行文件
+*.exe
+*.out

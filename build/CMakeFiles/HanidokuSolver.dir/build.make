@@ -160,6 +160,14 @@ HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/src/utils.cpp.obj
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/build.make
+HanidokuSolver.exe: D:/SFML-2.6.0/lib/libsfml-graphics.a
+HanidokuSolver.exe: D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/libgomp.dll.a
+HanidokuSolver.exe: D:/mingw64/x86_64-w64-mingw32/lib/libmingwthrd.a
+HanidokuSolver.exe: D:/mingw64/x86_64-w64-mingw32/lib/libpthread.dll.a
+HanidokuSolver.exe: D:/mingw64/x86_64-w64-mingw32/lib/libmingwthrd.a
+HanidokuSolver.exe: D:/mingw64/x86_64-w64-mingw32/lib/libpthread.dll.a
+HanidokuSolver.exe: D:/SFML-2.6.0/lib/libsfml-window.a
+HanidokuSolver.exe: D:/SFML-2.6.0/lib/libsfml-system.a
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/linkLibs.rsp
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/objects1.rsp
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/link.txt

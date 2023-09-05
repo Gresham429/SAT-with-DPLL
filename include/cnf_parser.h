@@ -30,10 +30,8 @@ public:
     // 判断是否为单子句（只有一个文字）
     bool IsUnitClause(clause clause);
 
-    // 判断子句中是否含有某个文字
-    bool HaveLiteral(clause clause, int literal);
-
-    void WriteRes(std::vector<LiteralStatus> assignemnt, std::string filename, bool flag, long long runtime);
+    // 输出res文件
+    void WriteRes(std::vector<LiteralStatus> assignemnt, std::string filename, bool flag, long long runtime, std::vector<size_t> left_nums);
 };
 
 #endif

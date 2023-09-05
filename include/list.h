@@ -101,7 +101,7 @@ public:
         }
     }
 
-    DeLinkList(const DeLinkList &other) : head(nullptr), tail(nullptr)
+    DeLinkList(const DeLinkList<T> &other) : head(nullptr), tail(nullptr)
     {
         this->length = other.size();
         Node<T> *otherNode = other.head;

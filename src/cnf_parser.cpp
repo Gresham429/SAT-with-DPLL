@@ -17,9 +17,6 @@ bool cnf_parser::ReadCNFFile(const std::string filename, DeLinkList<clause> &cla
         return false;
     }
 
-    // 读取cnf文件成功
-    std::cout << "成功读取cnf文件" << std::endl;
-
     std::string line;
 
     while (std::getline(inFile, line))
@@ -59,19 +56,8 @@ bool cnf_parser::IsUnitClause(clause clause)
     return (clause.literals.size() == 1);
 }
 
-// 判断子句中是否含有某个文字
-bool cnf_parser::HaveLiteral(clause clause, int literal)
-{
-    for (auto it_literal = clause.literals.begin(); it_literal != clause.literals.end(); ++it_literal)
-    {
-        if (*it_literal == literal)
-            return true;
-    }
-
-    return false;
-}
-
-void cnf_parser::WriteRes(std::vector<LiteralStatus> assignemnt, std::string filename, bool flag, long long runtime)
+// 输出res文件
+void cnf_parser::WriteRes(std::vector<LiteralStatus> assignemnt, std::string filename, bool flag, long long runtime, std::vector<size_t> left_nums)
 {
     extern int BoolCount;
     std::ofstream outFile(filename);
@@ -90,6 +76,12 @@ void cnf_parser::WriteRes(std::vector<LiteralStatus> assignemnt, std::string fil
         outFile << "s 0" << std::endl;
         outFile << "v" << std::endl;
         outFile << "t " << runtime << std::endl;
+        outFile << "剩余未满足的子句数量: ";
+
+        for (auto left_num : left_nums)
+        {
+            outFile << left_num << " ";
+        }
 
         outFile.close();
         return;
@@ -102,17 +94,27 @@ void cnf_parser::WriteRes(std::vector<LiteralStatus> assignemnt, std::string fil
     {
         if (assignemnt[i] == LiteralStatus::True)
         {
-            outFile << " " << i + 1;
+            outFile << " " << i;
         }
         else if (assignemnt[i] == LiteralStatus::False)
         {
-            outFile << " " << -(i + 1);
+            outFile << " " << -i;
+        }
+        else if (assignemnt[i] == LiteralStatus::Unassigned)
+        {
+            outFile << " " << i << "(Unassigned)";
         }
     }
 
     outFile << std::endl;
 
     outFile << "t " << runtime << std::endl;
+    outFile << "剩余未满足的子句数量: ";
+
+    for (auto left_num : left_nums)
+    {
+        outFile << left_num << " ";
+    }
 
     outFile.close();
 }

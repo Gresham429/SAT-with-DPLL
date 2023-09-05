@@ -1,1 +1,1 @@
--ID:/code/HanidokuSolver/include
+-ID:/code/HanidokuSolver/include -isystem "D:/SFML-2.6.0/include"

@@ -1,31 +1,31 @@
 [
 {
   "directory": "D:/code/HanidokuSolver/build",
-  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp  -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++14 -o CMakeFiles\\HanidokuSolver.dir\\src\\main.cpp.obj -c D:\\code\\HanidokuSolver\\src\\main.cpp",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp -fdec-math -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++17 -fopenmp -fopenmp -o CMakeFiles\\HanidokuSolver.dir\\src\\main.cpp.obj -c D:\\code\\HanidokuSolver\\src\\main.cpp",
   "file": "D:/code/HanidokuSolver/src/main.cpp",
   "output": "CMakeFiles/HanidokuSolver.dir/src/main.cpp.obj"
 },
 {
   "directory": "D:/code/HanidokuSolver/build",
-  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp  -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++14 -o CMakeFiles\\HanidokuSolver.dir\\src\\display.cpp.obj -c D:\\code\\HanidokuSolver\\src\\display.cpp",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp -fdec-math -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++17 -fopenmp -fopenmp -o CMakeFiles\\HanidokuSolver.dir\\src\\display.cpp.obj -c D:\\code\\HanidokuSolver\\src\\display.cpp",
   "file": "D:/code/HanidokuSolver/src/display.cpp",
   "output": "CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj"
 },
 {
   "directory": "D:/code/HanidokuSolver/build",
-  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp  -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++14 -o CMakeFiles\\HanidokuSolver.dir\\src\\hanidoku_solver.cpp.obj -c D:\\code\\HanidokuSolver\\src\\hanidoku_solver.cpp",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp -fdec-math -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++17 -fopenmp -fopenmp -o CMakeFiles\\HanidokuSolver.dir\\src\\hanidoku_solver.cpp.obj -c D:\\code\\HanidokuSolver\\src\\hanidoku_solver.cpp",
   "file": "D:/code/HanidokuSolver/src/hanidoku_solver.cpp",
   "output": "CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj"
 },
 {
   "directory": "D:/code/HanidokuSolver/build",
-  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp  -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++14 -o CMakeFiles\\HanidokuSolver.dir\\src\\cnf_parser.cpp.obj -c D:\\code\\HanidokuSolver\\src\\cnf_parser.cpp",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp -fdec-math -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++17 -fopenmp -fopenmp -o CMakeFiles\\HanidokuSolver.dir\\src\\cnf_parser.cpp.obj -c D:\\code\\HanidokuSolver\\src\\cnf_parser.cpp",
   "file": "D:/code/HanidokuSolver/src/cnf_parser.cpp",
   "output": "CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj"
 },
 {
   "directory": "D:/code/HanidokuSolver/build",
-  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp  -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++14 -o CMakeFiles\\HanidokuSolver.dir\\src\\utils.cpp.obj -c D:\\code\\HanidokuSolver\\src\\utils.cpp",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp -fdec-math -static-libgcc -static-libstdc++ -O3 -DNDEBUG -std=gnu++17 -fopenmp -fopenmp -o CMakeFiles\\HanidokuSolver.dir\\src\\utils.cpp.obj -c D:\\code\\HanidokuSolver\\src\\utils.cpp",
   "file": "D:/code/HanidokuSolver/src/utils.cpp",
   "output": "CMakeFiles/HanidokuSolver.dir/src/utils.cpp.obj"
 }

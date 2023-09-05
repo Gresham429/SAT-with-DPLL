@@ -100,6 +100,10 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/basic_string.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/alloc_traits.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/alloc_traits.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/string_view \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/limits \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/functional_hash.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/string_view.tcc \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/string_conversions.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdlib \
  D:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
@@ -109,7 +113,6 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/std_abs.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdio \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cerrno \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/functional_hash.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/basic_string.tcc \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_classes.tcc \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/system_error \
@@ -134,6 +137,9 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/map \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_tree.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/aligned_buffer.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/node_handle.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/optional \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/enable_special_members.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_map.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tuple \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/array \
@@ -149,7 +155,6 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: \
  D:/code/HanidokuSolver/include/utils.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/chrono \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ratio \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/limits \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ctime \
  D:/mingw64/x86_64-w64-mingw32/include/time.h \
  D:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
@@ -177,6 +182,13 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_queue.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/functional \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/std_function.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/unordered_map \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/hashtable.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/hashtable_policy.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/unordered_map.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_algo.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/algorithmfwd.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/mutex \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/std_mutex.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/condition_variable \
@@ -184,12 +196,6 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/atomic \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/atomic_futex.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/algorithm \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_algo.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/algorithmfwd.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uniform_int_dist.h \
- D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstring \
- D:/mingw64/x86_64-w64-mingw32/include/string.h \
- D:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
  D:/code/HanidokuSolver/include/cnf_parser.h \
  D:/code/HanidokuSolver/include/utils.h \
  D:/code/HanidokuSolver/include/list.h \
@@ -197,6 +203,20 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/random \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cmath \
  D:/mingw64/x86_64-w64-mingw32/include/math.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/specfun.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/gamma.tcc \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/special_function_util.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/bessel_function.tcc \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/special_function_util.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/beta_function.tcc \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/ell_integral.tcc \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/exp_integral.tcc \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/hypergeometric.tcc \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/legendre_function.tcc \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/modified_bessel_func.tcc \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/poly_hermite.tcc \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/poly_laguerre.tcc \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/riemann_zeta.tcc \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/random.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/opt_random.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/pmmintrin.h \
@@ -212,4 +232,90 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj: \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
  D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/fstream.tcc \
- D:/code/HanidokuSolver/include/dpll_solver.h
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/sstream \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/sstream.tcc \
+ D:/code/HanidokuSolver/include/dpll_solver.h \
+ D:/SFML-2.6.0/include/SFML/Graphics.hpp \
+ D:/SFML-2.6.0/include/SFML/Window.hpp \
+ D:/SFML-2.6.0/include/SFML/System.hpp \
+ D:/SFML-2.6.0/include/SFML/Config.hpp \
+ D:/SFML-2.6.0/include/SFML/System/Clock.hpp \
+ D:/SFML-2.6.0/include/SFML/System/Export.hpp \
+ D:/SFML-2.6.0/include/SFML/System/Time.hpp \
+ D:/SFML-2.6.0/include/SFML/System/Time.inl \
+ D:/SFML-2.6.0/include/SFML/System/Err.hpp \
+ D:/SFML-2.6.0/include/SFML/System/FileInputStream.hpp \
+ D:/SFML-2.6.0/include/SFML/System/InputStream.hpp \
+ D:/SFML-2.6.0/include/SFML/System/MemoryInputStream.hpp \
+ D:/SFML-2.6.0/include/SFML/System/Sleep.hpp \
+ D:/SFML-2.6.0/include/SFML/System/String.hpp \
+ D:/SFML-2.6.0/include/SFML/System/Utf.hpp \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iterator \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stream_iterator.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/locale \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_facets_nonio.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_facets_nonio.tcc \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_conv.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stringfwd.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/allocator.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/codecvt.h \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/unique_ptr.h \
+ D:/SFML-2.6.0/include/SFML/System/Utf.inl \
+ D:/SFML-2.6.0/include/SFML/System/String.inl \
+ D:/SFML-2.6.0/include/SFML/System/Vector2.hpp \
+ D:/SFML-2.6.0/include/SFML/System/Vector2.inl \
+ D:/SFML-2.6.0/include/SFML/System/Vector3.hpp \
+ D:/SFML-2.6.0/include/SFML/System/Vector3.inl \
+ D:/SFML-2.6.0/include/SFML/Window/Clipboard.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/Export.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/Context.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/GlResource.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/ContextSettings.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/Cursor.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/Event.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/Joystick.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/Keyboard.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/Mouse.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/Sensor.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/Touch.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/VideoMode.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/Window.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/WindowBase.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/Vulkan.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/WindowHandle.hpp \
+ D:/SFML-2.6.0/include/SFML/Window/WindowStyle.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/BlendMode.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Export.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/CircleShape.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Shape.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Drawable.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/RenderStates.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Transform.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Rect.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Rect.inl \
+ D:/SFML-2.6.0/include/SFML/Graphics/Transformable.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/VertexArray.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Vertex.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Color.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Color.inl \
+ D:/SFML-2.6.0/include/SFML/Graphics/Vertex.inl \
+ D:/SFML-2.6.0/include/SFML/Graphics/PrimitiveType.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/ConvexShape.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Font.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Glyph.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Texture.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Image.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/RectangleShape.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/RenderTarget.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/View.hpp \
+ D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstddef \
+ D:/SFML-2.6.0/include/SFML/Graphics/RenderTexture.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/RenderWindow.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Shader.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Glsl.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Glsl.inl \
+ D:/SFML-2.6.0/include/SFML/Graphics/Sprite.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/Text.hpp \
+ D:/SFML-2.6.0/include/SFML/Graphics/VertexBuffer.hpp
