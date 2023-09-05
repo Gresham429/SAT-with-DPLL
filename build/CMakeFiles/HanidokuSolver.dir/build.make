@@ -98,26 +98,11 @@ CMakeFiles/HanidokuSolver.dir/src/display.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HanidokuSolver.dir/src/display.cpp.s"
 	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\code\HanidokuSolver\src\display.cpp -o CMakeFiles\HanidokuSolver.dir\src\display.cpp.s
 
-CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj: CMakeFiles/HanidokuSolver.dir/flags.make
-CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj: CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp
-CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj: D:/code/HanidokuSolver/src/hanidoku_solver.cpp
-CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj: CMakeFiles/HanidokuSolver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\code\HanidokuSolver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj"
-	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj -MF CMakeFiles\HanidokuSolver.dir\src\hanidoku_solver.cpp.obj.d -o CMakeFiles\HanidokuSolver.dir\src\hanidoku_solver.cpp.obj -c D:\code\HanidokuSolver\src\hanidoku_solver.cpp
-
-CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.i"
-	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\code\HanidokuSolver\src\hanidoku_solver.cpp > CMakeFiles\HanidokuSolver.dir\src\hanidoku_solver.cpp.i
-
-CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.s"
-	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\code\HanidokuSolver\src\hanidoku_solver.cpp -o CMakeFiles\HanidokuSolver.dir\src\hanidoku_solver.cpp.s
-
 CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj: CMakeFiles/HanidokuSolver.dir/flags.make
 CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj: CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp
 CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj: D:/code/HanidokuSolver/src/cnf_parser.cpp
 CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj: CMakeFiles/HanidokuSolver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\code\HanidokuSolver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\code\HanidokuSolver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj"
 	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj -MF CMakeFiles\HanidokuSolver.dir\src\cnf_parser.cpp.obj.d -o CMakeFiles\HanidokuSolver.dir\src\cnf_parser.cpp.obj -c D:\code\HanidokuSolver\src\cnf_parser.cpp
 
 CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.i: cmake_force
@@ -128,37 +113,18 @@ CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.s"
 	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\code\HanidokuSolver\src\cnf_parser.cpp -o CMakeFiles\HanidokuSolver.dir\src\cnf_parser.cpp.s
 
-CMakeFiles/HanidokuSolver.dir/src/utils.cpp.obj: CMakeFiles/HanidokuSolver.dir/flags.make
-CMakeFiles/HanidokuSolver.dir/src/utils.cpp.obj: CMakeFiles/HanidokuSolver.dir/includes_CXX.rsp
-CMakeFiles/HanidokuSolver.dir/src/utils.cpp.obj: D:/code/HanidokuSolver/src/utils.cpp
-CMakeFiles/HanidokuSolver.dir/src/utils.cpp.obj: CMakeFiles/HanidokuSolver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\code\HanidokuSolver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HanidokuSolver.dir/src/utils.cpp.obj"
-	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HanidokuSolver.dir/src/utils.cpp.obj -MF CMakeFiles\HanidokuSolver.dir\src\utils.cpp.obj.d -o CMakeFiles\HanidokuSolver.dir\src\utils.cpp.obj -c D:\code\HanidokuSolver\src\utils.cpp
-
-CMakeFiles/HanidokuSolver.dir/src/utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HanidokuSolver.dir/src/utils.cpp.i"
-	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\code\HanidokuSolver\src\utils.cpp > CMakeFiles\HanidokuSolver.dir\src\utils.cpp.i
-
-CMakeFiles/HanidokuSolver.dir/src/utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HanidokuSolver.dir/src/utils.cpp.s"
-	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\code\HanidokuSolver\src\utils.cpp -o CMakeFiles\HanidokuSolver.dir\src\utils.cpp.s
-
 # Object files for target HanidokuSolver
 HanidokuSolver_OBJECTS = \
 "CMakeFiles/HanidokuSolver.dir/src/main.cpp.obj" \
 "CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj" \
-"CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj" \
-"CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj" \
-"CMakeFiles/HanidokuSolver.dir/src/utils.cpp.obj"
+"CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj"
 
 # External object files for target HanidokuSolver
 HanidokuSolver_EXTERNAL_OBJECTS =
 
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/src/main.cpp.obj
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/src/display.cpp.obj
-HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/src/cnf_parser.cpp.obj
-HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/src/utils.cpp.obj
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/build.make
 HanidokuSolver.exe: D:/SFML-2.6.0/lib/libsfml-graphics.a
 HanidokuSolver.exe: D:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/libgomp.dll.a
@@ -171,7 +137,7 @@ HanidokuSolver.exe: D:/SFML-2.6.0/lib/libsfml-system.a
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/linkLibs.rsp
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/objects1.rsp
 HanidokuSolver.exe: CMakeFiles/HanidokuSolver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\code\HanidokuSolver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable HanidokuSolver.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\code\HanidokuSolver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable HanidokuSolver.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\HanidokuSolver.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

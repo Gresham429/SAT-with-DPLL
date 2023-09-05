@@ -176,30 +176,6 @@ src/display.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HanidokuSolver.dir\build.make CMakeFiles/HanidokuSolver.dir/src/display.cpp.s
 .PHONY : src/display.cpp.s
 
-src/hanidoku_solver.obj: src/hanidoku_solver.cpp.obj
-.PHONY : src/hanidoku_solver.obj
-
-# target to build an object file
-src/hanidoku_solver.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HanidokuSolver.dir\build.make CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.obj
-.PHONY : src/hanidoku_solver.cpp.obj
-
-src/hanidoku_solver.i: src/hanidoku_solver.cpp.i
-.PHONY : src/hanidoku_solver.i
-
-# target to preprocess a source file
-src/hanidoku_solver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HanidokuSolver.dir\build.make CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.i
-.PHONY : src/hanidoku_solver.cpp.i
-
-src/hanidoku_solver.s: src/hanidoku_solver.cpp.s
-.PHONY : src/hanidoku_solver.s
-
-# target to generate assembly for a file
-src/hanidoku_solver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HanidokuSolver.dir\build.make CMakeFiles/HanidokuSolver.dir/src/hanidoku_solver.cpp.s
-.PHONY : src/hanidoku_solver.cpp.s
-
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -224,30 +200,6 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\HanidokuSolver.dir\build.make CMakeFiles/HanidokuSolver.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/utils.obj: src/utils.cpp.obj
-.PHONY : src/utils.obj
-
-# target to build an object file
-src/utils.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HanidokuSolver.dir\build.make CMakeFiles/HanidokuSolver.dir/src/utils.cpp.obj
-.PHONY : src/utils.cpp.obj
-
-src/utils.i: src/utils.cpp.i
-.PHONY : src/utils.i
-
-# target to preprocess a source file
-src/utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HanidokuSolver.dir\build.make CMakeFiles/HanidokuSolver.dir/src/utils.cpp.i
-.PHONY : src/utils.cpp.i
-
-src/utils.s: src/utils.cpp.s
-.PHONY : src/utils.s
-
-# target to generate assembly for a file
-src/utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HanidokuSolver.dir\build.make CMakeFiles/HanidokuSolver.dir/src/utils.cpp.s
-.PHONY : src/utils.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -263,15 +215,9 @@ help:
 	@echo ... src/display.obj
 	@echo ... src/display.i
 	@echo ... src/display.s
-	@echo ... src/hanidoku_solver.obj
-	@echo ... src/hanidoku_solver.i
-	@echo ... src/hanidoku_solver.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
-	@echo ... src/utils.obj
-	@echo ... src/utils.i
-	@echo ... src/utils.s
 .PHONY : help
 
 

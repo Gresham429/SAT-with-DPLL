@@ -111,20 +111,7 @@ void display(int op)
         break;
 
     case 5:
-        // if (clauses.empty())
-        // {
-        //     cout << "请先读入cnf文件" << endl;
-        //     break;
-        // }
-
-        // result_pair = MeasureTime(std::bind(&DPLLSolver::OptimizedSolve3, &dpll_solver, std::placeholders::_1, std::placeholders::_2), clauses, BoolCount);
-        // result = result_pair.first;
-        // runtime = result_pair.second;
-
-        // if (result) cout << "有解" << endl;
-        // else  cout << "无解" << endl;
-
-        // clauses.clear();
+        // cdcl(未完成)
 
         break;
 

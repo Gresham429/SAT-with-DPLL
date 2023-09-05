@@ -19,9 +19,7 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libgcc -static-libstdc++")
 set(SOURCES
     src/main.cpp
     src/display.cpp
-    src/hanidoku_solver.cpp
     src/cnf_parser.cpp
-    src/utils.cpp
 )
 
 # 头文件
